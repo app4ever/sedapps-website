@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sedapps.ai — Créez votre site web avec l'IA</title>
+<meta name="description" content="Sedapps.ai est la plateforme qui vous permet de créer, modifier et déployer des sites web professionnels grâce à l'intelligence artificielle. Sans code, en quelques secondes.">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative}
+.hg{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);padding:6px 16px;border-radius:100px;font-size:.8rem;font-weight:500;color:var(--blue-l);margin-bottom:24px}
+.hbadge .dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{margin-bottom:20px}
+.hero>div>div>p{font-size:1.15rem;margin-bottom:36px;max-width:480px}
+.hacts{display:flex;gap:12px;flex-wrap:wrap}
+.hstats{display:flex;gap:32px;margin-top:48px;flex-wrap:wrap}
+.hstat .num{font-size:1.8rem;font-weight:800;color:var(--text)}
+.hstat .lbl{font-size:.78rem;color:var(--faint)}
+.mockup{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.4),0 0 40px rgba(59,130,246,.12)}
+.mbar{background:rgba(255,255,255,.03);border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;gap:8px}
+.mdots{display:flex;gap:6px}
+.mdots span{width:10px;height:10px;border-radius:50%}
+.mdots span:nth-child(1){background:#ff5f57}
+.mdots span:nth-child(2){background:#febc2e}
+.mdots span:nth-child(3){background:#28c840}
+.murl{flex:1;background:rgba(255,255,255,.05);border-radius:6px;padding:4px 12px;font-size:.75rem;color:var(--faint);margin:0 12px}
+.mbody{padding:20px}
+.cmsg{display:flex;gap:10px;margin-bottom:14px;align-items:flex-start}
+.cav{width:30px;height:30px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.75rem}
+.cav.u{background:linear-gradient(135deg,var(--blue),var(--purple))}
+.cav.a{background:rgba(6,182,212,.15);border:1px solid rgba(6,182,212,.2);overflow:hidden}
+.cav.a img{width:100%;height:100%;object-fit:contain}
+.cbub{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;font-size:.82rem;max-width:260px;color:var(--muted)}
+.cbub.a{background:rgba(59,130,246,.06);border-color:rgba(59,130,246,.15)}
+.typing{display:flex;gap:4px;padding:4px 0}
+.typing span{width:6px;height:6px;border-radius:50%;background:var(--blue-l);animation:typ 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes typ{0%,80%,100%{transform:scale(.8);opacity:.4}40%{transform:scale(1);opacity:1}}
+.mprev{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
+.mpbar{background:rgba(59,130,246,.08);padding:8px 12px;font-size:.72rem;color:var(--blue-l);display:flex;align-items:center;gap:6px}
+.mpc{background:rgba(255,255,255,.02);padding:14px}
+.pl{height:7px;border-radius:4px;background:rgba(255,255,255,.06);margin-bottom:7px}
+.pl.w60{width:60%}.pl.w80{width:80%}.pl.w40{width:40%}
+.hbf{position:absolute;background:var(--surface);border:1px solid var(--border);border-radius:var(--rs);padding:8px 14px;font-size:.78rem;font-weight:600;backdrop-filter:blur(12px);white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.hbf.dep{bottom:-16px;left:-24px;color:var(--green)}
+.hbf.ai{top:-14px;right:-16px;color:var(--blue-l)}
+.hv{position:relative}
+
+.fg3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fg4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fg2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.steps::before{content:'';position:absolute;top:32px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,var(--border),var(--border),transparent);z-index:0}
+.step{text-align:center;padding:0 8px;position:relative;z-index:1}
+.snum{width:64px;height:64px;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;background:var(--bg2);border:2px solid var(--border);position:relative}
+.snum::after{content:'';position:absolute;inset:-5px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));z-index:-1;opacity:.25}
+.step h3{margin-bottom:8px;font-size:1rem}
+.step p{font-size:.85rem}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.pc{padding:36px;border-radius:var(--rl);background:var(--surface);border:1px solid var(--border);position:relative;transition:all .3s}
+.pc:hover{transform:translateY(-4px)}
+.pc.pop{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(139,92,246,.08));border-color:rgba(59,130,246,.3);box-shadow:0 0 60px rgba(59,130,246,.1)}
+.pbadge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.1em;padding:4px 16px;border-radius:100px}
+.pname{font-size:.82rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.pprice{margin-bottom:8px}
+.pprice .am{font-size:3rem;font-weight:800;color:var(--text)}
+.pprice .per{font-size:.9rem;color:var(--muted)}
+.pdesc{font-size:.85rem;margin-bottom:28px}
+.pf{margin-bottom:32px;display:flex;flex-direction:column;gap:12px}
+.pf li{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--muted)}
+.pf li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+.pf li.no{color:var(--faint)}
+.pf li.no::before{content:'–';color:var(--faint)}
+
+.tc{padding:28px;border-radius:var(--r);background:var(--surface);border:1px solid var(--border)}
+.stars{color:#f59e0b;font-size:.85rem;margin-bottom:14px;letter-spacing:2px}
+.tc blockquote{font-size:.9rem;margin-bottom:20px;font-style:italic;color:var(--muted)}
+.ta{display:flex;align-items:center;gap:12px}
+.tav{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;color:#fff;flex-shrink:0}
+.tan{font-size:.88rem;font-weight:600;color:var(--text)}
+.tar{font-size:.78rem;color:var(--faint)}
+
+@media(max-width:1024px){.fg3{grid-template-columns:repeat(2,1fr)}.pricing-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.hg{grid-template-columns:1fr}.hv{display:none}.hero{padding:100px 0 60px;min-height:auto}.steps{grid-template-columns:1fr 1fr}.steps::before{display:none}.fg3{grid-template-columns:1fr}.fg4{grid-template-columns:1fr 1fr}.fg2{grid-template-columns:1fr}}
+@media(max-width:480px){.fg4{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="amb amb-b"></div>
+<div class="amb amb-p"></div>
+<div class="amb amb-c"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-logo">
+      <div class="li"><img src="logo.png" alt="Sedapps"></div>
+      <span>Sedapps.ai</span>
+    </a>
+    <div class="nav-links">
+      <a href="features.html">Fonctionnalités</a>
+      <a href="how-it-works.html">Comment ça marche</a>
+      <a href="pricing.html">Tarifs</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/login" class="btn btn-s btn-sm">Connexion</a>
+      <a href="/register" class="btn btn-p btn-sm">Commencer gratuitement</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <a href="features.html">Fonctionnalités</a>
+  <a href="how-it-works.html">Comment ça marche</a>
+  <a href="pricing.html">Tarifs</a>
+  <a href="about.html">À propos</a>
+  <a href="contact.html">Contact</a>
+  <div class="mob-div"></div>
+  <a href="/login">Connexion</a>
+  <a href="/register" class="btn btn-p">Commencer gratuitement →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hg">
+      <div>
+        <div class="hbadge"><span class="dot"></span> Plateforme IA nouvelle génération</div>
+        <h1>Créez votre site web avec l'<span class="grad">Intelligence Artificielle</span></h1>
+        <p>Décrivez votre projet en français, Sedapps.ai génère, héberge et déploie votre site en quelques secondes. Zéro code, 100% autonome.</p>
+        <div class="hacts">
+          <a href="/register" class="btn btn-p btn-lg">Commencer gratuitement →</a>
+          <a href="how-it-works.html" class="btn btn-s btn-lg">Voir comment ça marche</a>
+        </div>
+        <div class="hstats">
+          <div class="hstat"><span class="num">500+</span><span class="lbl">Sites créés</span></div>
+          <div class="hstat"><span class="num">3s</span><span class="lbl">Temps de génération</span></div>
+          <div class="hstat"><span class="num">99.9%</span><span class="lbl">Uptime garanti</span></div>
+        </div>
+      </div>
+      <div class="hv">
+        <div class="mockup">
+          <div class="mbar">
+            <div class="mdots"><span></span><span></span><span></span></div>
+            <div class="murl">sedapps.ai/chat</div>
+          </div>
+          <div class="mbody">
+            <div class="cmsg">
+              <div class="cav u">👤</div>
+              <div class="cbub">"Crée-moi une boutique en ligne moderne pour vendre des bijoux artisanaux"</div>
+            </div>
+            <div class="cmsg">
+              <div class="cav a"><img src="logo.png" alt="AI"></div>
+              <div class="cbub a">
+                <div class="typing"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <div class="mprev">
+              <div class="mpbar">✨ Génération en cours… boutique-bijoux.sedapps.app</div>
+              <div class="mpc">
+                <div class="pl w80"></div>
+                <div class="pl w60"></div>
+                <div class="pl w40"></div>
+                <div class="pl w80"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hbf dep">✅ Déployé en 2.4s</div>
+        <div class="hbf ai">🤖 SedAI actif</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface);position:relative;z-index:1">
+  <div class="wrap">
+    <div class="stats-row">
+      <div class="stat"><span class="num">500+</span><span class="lbl">Sites déployés</span></div>
+      <div class="stat"><span class="num">3s</span><span class="lbl">Génération moyenne</span></div>
+      <div class="stat"><span class="num">99.9%</span><span class="lbl">Uptime SLA</span></div>
+      <div class="stat"><span class="num">24/7</span><span class="lbl">Support IA</span></div>
+      <div class="stat"><span class="num">100%</span><span class="lbl">Sans code</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="wrap">
+    <div class="sh">
+      <span class="label">Fonctionnalités</span>
+      <h2>Tout ce dont vous avez besoin</h2>
+      <p>De la création à l'hébergement en passant par les domaines, Sedapps.ai couvre l'intégralité du cycle de vie de votre site web.</p>
+    </div>
+    <div class="fg3">
+      <div class="card">
+        <div class="icon-box ib-b">🤖</div>
+        <h3>Chat IA conversationnel</h3>
+        <p>Décrivez votre site en langage naturel. Notre IA comprend votre vision et génère le code HTML, CSS et JavaScript en temps réel.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box ib-c">⚡</div>
+        <h3>Déploiement instantané</h3>
+        <p>Votre site est hébergé et accessible en ligne en quelques secondes. Pas de configuration serveur, pas de DevOps.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box ib-p">🎨</div>
+        <h3>Builder visuel</h3>
+        <p>Modifiez votre site directement dans l'interface visuelle. Inspectez, éditez, prévisualisez en temps réel.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box ib-g">🌐</div>
+        <h3>Domaines personnalisés</h3>
+        <p>Achetez et configurez votre nom de domaine directement depuis la plateforme. DNS automatique, SSL inclus.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box ib-o">📊</div>
+        <h3>Analytics intégrées</h3>
+        <p>Suivez les visites, les performances et l'engagement de vos utilisateurs en temps réel depuis votre dashboard.</p>
+      </div>
+      <div class="card">
+        <div class="icon-box ib-pk">🔒</div>
+        <h3>SSL & Sécurité</h3>
+        <p>Certificat SSL automatique, protection DDoS et sauvegardes quotidiennes incluses dans tous les plans.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="features.html" class="btn btn-s">Voir toutes les fonctionnalités →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sh">
+      <span class="label">Comment ça marche</span>
+      <h2>De l'idée au site en ligne en 4 étapes</h2>
+      <p>Sedapps.ai simplifie radicalement la création web. Voici comment fonctionne la plateforme.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="snum">1</div>
+        <h3>Décrivez</h3>
+        <p>Expliquez votre projet en français dans le chat IA. Soyez aussi précis ou vague que vous le souhaitez.</p>
+      </div>
+      <div class="step">
+        <div class="snum">2</div>
+        <h3>Générez</h3>
+        <p>L'IA analyse votre demande et génère automatiquement le code HTML, CSS et JavaScript de votre site.</p>
+      </div>
+      <div class="step">
+        <div class="snum">3</div>
+        <h3>Affinez</h3>
+        <p>Modifiez votre site par conversation ou via le builder visuel. Chaque changement est appliqué instantanément.</p>
+      </div>
+      <div class="step">
+        <div class="snum">4</div>
+        <h3>Déployez</h3>
+        <p>Publiez en un clic sur votre domaine personnalisé. Votre site est en ligne, sécurisé et performant.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="how-it-works.html" class="btn btn-p btn-lg">En savoir plus →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section">
+  <div class="wrap">
+    <div class="sh">
+      <span class="label">Tarifs</span>
+      <h2>Des prix simples et transparents</h2>
+      <p>Choisissez le plan adapté à votre projet. Pas de frais cachés, pas d'engagement.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pc">
+        <div class="pname">Starter</div>
+        <div class="pprice"><span class="am">9€</span><span class="per">/mois</span></div>
+        <p class="pdesc">Parfait pour démarrer un projet personnel ou tester la plateforme.</p>
+        <ul class="pf">
+          <li>1 projet actif</li>
+          <li>50 GB de bande passante</li>
+          <li>Sous-domaine sedapps.app</li>
+          <li>SSL automatique</li>
+          <li>Support par email</li>
+          <li class="no">Domaine personnalisé</li>
+          <li class="no">Analytics avancées</li>
+        </ul>
+        <a href="/register" class="btn btn-s btn-full">Commencer</a>
+      </div>
+      <div class="pc pop">
+        <div class="pbadge">POPULAIRE</div>
+        <div class="pname">Pro</div>
+        <div class="pprice"><span class="am">29€</span><span class="per">/mois</span></div>
+        <p class="pdesc">Pour les professionnels et les petites entreprises qui veulent plus.</p>
+        <ul class="pf">
+          <li>10 projets actifs</li>
+          <li>500 GB de bande passante</li>
+          <li>Domaine personnalisé inclus</li>
+          <li>SSL automatique</li>
+          <li>Support prioritaire</li>
+          <li>Analytics avancées</li>
+          <li>CDN mondial</li>
+        </ul>
+        <a href="/register" class="btn btn-p btn-full">Commencer</a>
+      </div>
+      <div class="pc">
+        <div class="pname">Enterprise</div>
+        <div class="pprice"><span class="am">99€</span><span class="per">/mois</span></div>
+        <p class="pdesc">Pour les agences et entreprises avec des besoins avancés.</p>
+        <ul class="pf">
+          <li>Projets illimités</li>
+          <li>Bande passante illimitée</li>
+          <li>Domaines illimités</li>
+          <li>SSL automatique</li>
+          <li>Support 24/7 dédié</li>
+          <li>Analytics avancées</li>
+          <li>Protection DDoS</li>
+        </ul>
+        <a href="/register" class="btn btn-s btn-full">Contacter</a>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="pricing.html" class="btn btn-s">Comparer tous les plans →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sh">
+      <span class="label">Témoignages</span>
+      <h2>Ce que disent nos utilisateurs</h2>
+    </div>
+    <div class="fg3">
+      <div class="tc">
+        <div class="stars">★★★★★</div>
+        <blockquote>"J'ai créé mon portfolio professionnel en moins de 10 minutes. L'IA a compris exactement ce que je voulais dès la première description."</blockquote>
+        <div class="ta"><div class="tav">ML</div><div><div class="tan">Marie L.</div><div class="tar">Designer freelance</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Notre boutique en ligne est en ligne depuis 3 mois. Le déploiement automatique et le SSL inclus nous ont fait gagner un temps précieux."</blockquote>
+        <div class="ta"><div class="tav">TC</div><div><div class="tan">Thomas C.</div><div class="tar">E-commerçant</div></div></div>
+      </div>
+      <div class="tc">
+        <div class="stars">★★★★★</div>
+        <blockquote>"En tant qu'agence, on gère 8 sites clients sur Sedapps. Le plan Enterprise est parfait pour notre volume et les analytics sont excellentes."</blockquote>
+        <div class="ta"><div class="tav">SA</div><div><div class="tan">Sophie A.</div><div class="tar">Directrice d'agence</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta-box">
+      <span class="label">Prêt à commencer ?</span>
+      <h2>Créez votre premier site <span class="grad">gratuitement</span></h2>
+      <p>Rejoignez des centaines d'utilisateurs qui créent des sites web professionnels avec Sedapps.ai. Aucune carte bancaire requise.</p>
+      <div class="cta-acts">
+        <a href="/register" class="btn btn-p btn-lg">Commencer gratuitement →</a>
+        <a href="contact.html" class="btn btn-s btn-lg">Parler à un expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="fg">
+      <div class="fb">
+        <a href="index.html" class="nav-logo" style="display:inline-flex">
+          <div class="li"><img src="logo.png" alt="Sedapps"></div>
+          <span>Sedapps.ai</span>
+        </a>
+        <p>La plateforme IA qui vous permet de créer, modifier et déployer des sites web professionnels sans aucune compétence technique.</p>
+      </div>
+      <div class="fc">
+        <h5>Produit</h5>
+        <ul>
+          <li><a href="features.html">Fonctionnalités</a></li>
+          <li><a href="how-it-works.html">Comment ça marche</a></li>
+          <li><a href="pricing.html">Tarifs</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h5>Entreprise</h5>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h5>Légal</h5>
+        <ul>
+          <li><a href="terms.html">Conditions d'utilisation</a></li>
+          <li><a href="privacy.html">Politique de confidentialité</a></li>
+          <li><a href="cookies.html">Politique de cookies</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fb-bot">
+      <p>© 2026 Sedapps.ai — Tous droits réservés</p>
+      <div class="fsoc">
+        <a href="#" title="Twitter/X">𝕏</a>
+        <a href="#" title="LinkedIn">in</a>
+        <a href="#" title="GitHub">⌥</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>

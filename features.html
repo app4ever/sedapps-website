@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fonctionnalités — Sedapps.ai</title>
+<meta name="description" content="Découvrez toutes les fonctionnalités de Sedapps.ai : chat IA, builder visuel, hébergement, domaines, analytics et bien plus.">
+<link rel="icon" href="logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.fg3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fg2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.feat-big{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:64px 0;border-bottom:1px solid var(--border)}
+.feat-big:last-child{border-bottom:none}
+.feat-big.rev{direction:rtl}
+.feat-big.rev>*{direction:ltr}
+.feat-visual{background:var(--surface);border:1px solid var(--border);border-radius:var(--rl);padding:32px;min-height:280px;display:flex;flex-direction:column;gap:12px}
+.code-line{height:8px;border-radius:4px;background:rgba(255,255,255,.06);margin-bottom:6px}
+.code-line.w90{width:90%}.code-line.w70{width:70%}.code-line.w50{width:50%}.code-line.w80{width:80%}.code-line.w40{width:40%}
+.code-block{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:16px;font-family:monospace;font-size:.78rem;color:var(--muted);line-height:1.8}
+.code-block .kw{color:#60a5fa}.code-block .str{color:#86efac}.code-block .fn{color:#c4b5fd}
+.tag{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);color:#6ee7b7;font-size:.75rem;font-weight:600;padding:4px 12px;border-radius:100px;margin-bottom:16px}
+.feat-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.feat-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--muted)}
+.feat-list li::before{content:'→';color:var(--blue-l);font-weight:700;flex-shrink:0;margin-top:2px}
+.compare-table{width:100%;border-collapse:collapse;margin-top:32px}
+.compare-table th,.compare-table td{padding:14px 20px;text-align:left;border-bottom:1px solid var(--border);font-size:.88rem}
+.compare-table th{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--faint)}
+.compare-table td:first-child{color:var(--text);font-weight:500}
+.compare-table td:not(:first-child){text-align:center;color:var(--muted)}
+.compare-table tr:hover td{background:var(--surface)}
+.check{color:var(--green);font-weight:700}
+.cross{color:var(--faint)}
+@media(max-width:768px){.feat-big{grid-template-columns:1fr}.feat-big.rev{direction:ltr}.fg3{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="amb amb-b"></div><div class="amb amb-p"></div><div class="amb amb-c"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="nav-logo">
+      <div class="li"><img src="logo.png" alt="Sedapps"></div>
+      <span>Sedapps.ai</span>
+    </a>
+    <div class="nav-links">
+      <a href="features.html" class="active">Fonctionnalités</a>
+      <a href="how-it-works.html">Comment ça marche</a>
+      <a href="pricing.html">Tarifs</a>
+      <a href="about.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/login" class="btn btn-s btn-sm">Connexion</a>
+      <a href="/register" class="btn btn-p btn-sm">Commencer gratuitement</a>
+    </div>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <a href="features.html" class="active">Fonctionnalités</a>
+  <a href="how-it-works.html">Comment ça marche</a>
+  <a href="pricing.html">Tarifs</a>
+  <a href="about.html">À propos</a>
+  <a href="contact.html">Contact</a>
+  <div class="mob-div"></div>
+  <a href="/login">Connexion</a>
+  <a href="/register" class="btn btn-p">Commencer gratuitement →</a>
+</div>
+
+<div class="ph">
+  <div class="wrap">
+    <div class="bc"><a href="index.html">Accueil</a><span>/</span><span>Fonctionnalités</span></div>
+    <span class="label">Fonctionnalités</span>
+    <h1>Une plateforme complète pour votre <span class="grad">présence web</span></h1>
+    <p>Tout ce dont vous avez besoin pour créer, gérer et faire croître votre site web, réuni en une seule plateforme alimentée par l'IA.</p>
+  </div>
+</div>
+
+<!-- CORE FEATURES GRID -->
+<section class="section-sm">
+  <div class="wrap">
+    <div class="fg3">
+      <div class="card"><div class="icon-box ib-b">🤖</div><h3>Chat IA conversationnel</h3><p>Décrivez votre site en langage naturel. L'IA génère le code HTML, CSS et JavaScript en temps réel, directement dans votre navigateur.</p></div>
+      <div class="card"><div class="icon-box ib-c">⚡</div><h3>Déploiement instantané</h3><p>Votre site est hébergé et accessible en ligne en quelques secondes. Infrastructure cloud haute disponibilité avec CDN mondial.</p></div>
+      <div class="card"><div class="icon-box ib-p">🎨</div><h3>Builder visuel</h3><p>Interface d'édition visuelle avec inspecteur d'éléments, modification en direct et prévisualisation instantanée sur tous les appareils.</p></div>
+      <div class="card"><div class="icon-box ib-g">🌐</div><h3>Gestion de domaines</h3><p>Achetez, configurez et gérez vos noms de domaine directement depuis la plateforme. DNS automatique, SSL Let's Encrypt inclus.</p></div>
+      <div class="card"><div class="icon-box ib-o">📊</div><h3>Analytics temps réel</h3><p>Tableau de bord analytics complet : visites, sources de trafic, pages vues, temps de session et performances techniques.</p></div>
+      <div class="card"><div class="icon-box ib-pk">🔒</div><h3>Sécurité avancée</h3><p>SSL automatique, protection DDoS, sauvegardes quotidiennes et monitoring 24/7 pour garder votre site sécurisé en permanence.</p></div>
+      <div class="card"><div class="icon-box ib-b">📁</div><h3>Gestion de fichiers</h3><p>Gestionnaire de fichiers intégré pour uploader des images, documents et assets. Optimisation automatique des images.</p></div>
+      <div class="card"><div class="icon-box ib-c">🔄</div><h3>Historique des révisions</h3><p>Chaque modification est sauvegardée. Revenez à n'importe quelle version précédente de votre site en un clic.</p></div>
+      <div class="card"><div class="icon-box ib-p">👥</div><h3>Collaboration d'équipe</h3><p>Invitez des collaborateurs sur vos projets. Gestion des rôles et permissions pour travailler efficacement en équipe.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE DEEP DIVES -->
+<section class="section" style="border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sh">
+      <span class="label">En détail</span>
+      <h2>Comment chaque fonctionnalité vous aide</h2>
+    </div>
+
+    <div class="feat-big">
+      <div>
+        <div class="tag">🤖 Intelligence Artificielle</div>
+        <h2>Un assistant IA qui comprend votre vision</h2>
+        <p style="margin:16px 0">SedAI est notre moteur d'intelligence artificielle basé sur les derniers modèles de langage. Il comprend le français, analyse votre demande et génère un site web complet et fonctionnel.</p>
+        <ul class="feat-list">
+          <li>Génération de code HTML, CSS et JavaScript propre et optimisé</li>
+          <li>Compréhension du contexte et de l'intention de votre projet</li>
+          <li>Suggestions de design et d'améliorations automatiques</li>
+          <li>Modification incrémentale par conversation continue</li>
+          <li>Support WordPress, PHP et sites statiques</li>
+        </ul>
+      </div>
+      <div class="feat-visual">
+        <div class="code-block">
+          <span class="kw">// SedAI génère votre site</span><br>
+          <span class="fn">createWebsite</span>(<span class="str">"boutique bijoux artisanaux"</span>)<br>
+          &nbsp;&nbsp;.<span class="fn">withStyle</span>(<span class="str">"moderne, élégant"</span>)<br>
+          &nbsp;&nbsp;.<span class="fn">withPages</span>([<span class="str">"accueil"</span>, <span class="str">"boutique"</span>, <span class="str">"contact"</span>])<br>
+          &nbsp;&nbsp;.<span class="fn">deploy</span>() <span class="kw">// ✅ En ligne en 3s</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <div class="code-line w90"></div>
+          <div class="code-line w70"></div>
+          <div class="code-line w80"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-big rev">
+      <div>
+        <div class="tag">🎨 Builder Visuel</div>
+        <h2>Modifiez votre site sans toucher au code</h2>
+        <p style="margin:16px 0">Notre builder visuel vous permet d'inspecter et modifier chaque élément de votre site directement dans l'interface. Cliquez, éditez, prévisualisez.</p>
+        <ul class="feat-list">
+          <li>Inspecteur d'éléments avec édition en direct</li>
+          <li>Prévisualisation responsive (mobile, tablette, desktop)</li>
+          <li>Diff avant/après pour chaque modification IA</li>
+          <li>Annulation et rétablissement illimités</li>
+          <li>Bibliothèque de templates réutilisables</li>
+        </ul>
+      </div>
+      <div class="feat-visual">
+        <div style="background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;overflow:hidden">
+          <div style="background:rgba(255,255,255,.03);padding:8px 12px;border-bottom:1px solid var(--border);font-size:.75rem;color:var(--faint);display:flex;gap:8px">
+            <span style="color:var(--blue-l)">● Inspecteur</span>
+            <span>● Styles</span>
+            <span>● Révisions</span>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;gap:10px">
+            <div style="background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:10px 14px;font-size:.82rem;color:var(--blue-l)">
+              &lt;h1&gt; — Titre principal
+            </div>
+            <div style="padding:0 8px;display:flex;flex-direction:column;gap:6px">
+              <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)"><span>font-size</span><span style="color:var(--text)">2.5rem</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)"><span>font-weight</span><span style="color:var(--text)">700</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted)"><span>color</span><span style="background:linear-gradient(135deg,#60a5fa,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">gradient</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-big">
+      <div>
+        <div class="tag">🌐 Domaines & Hébergement</div>
+        <h2>Votre domaine, votre identité en ligne</h2>
+        <p style="margin:16px 0">Achetez et gérez vos noms de domaine directement depuis Sedapps.ai. Configuration DNS automatique, SSL inclus, redirection simple.</p>
+        <ul class="feat-list">
+          <li>Recherche et achat de domaines (.fr, .com, .io, etc.)</li>
+          <li>Configuration DNS automatique en un clic</li>
+          <li>Certificat SSL Let's Encrypt automatique et renouvelé</li>
+          <li>Hébergement haute disponibilité (99.9% uptime)</li>
+          <li>CDN mondial pour des temps de chargement optimaux</li>
+        </ul>
+      </div>
+      <div class="feat-visual">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:.88rem;color:var(--text)">monsite.fr</span>
+            <span style="font-size:.75rem;color:var(--green);font-weight:600">✓ Actif</span>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:.88rem;color:var(--muted)">SSL Let's Encrypt</span>
+            <span style="font-size:.75rem;color:var(--green);font-weight:600">🔒 Sécurisé</span>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:.88rem;color:var(--muted)">CDN mondial</span>
+            <span style="font-size:.75rem;color:var(--blue-l);font-weight:600">⚡ 45ms</span>
+          </div>
+          <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:.88rem;color:var(--muted)">Uptime</span>
+            <span style="font-size:.75rem;color:var(--green);font-weight:600">99.9%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section" style="background:rgba(255,255,255,.02);border-top:1px solid var(--border)">
+  <div class="wrap">
+    <div class="sh">
+      <span class="label">Comparaison</span>
+      <h2>Sedapps.ai vs les alternatives</h2>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Fonctionnalité</th>
+            <th>Sedapps.ai</th>
+            <th>Wix</th>
+            <th>WordPress</th>
+            <th>Squarespace</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Génération IA par conversation</td><td class="check">✓</td><td class="cross">–</td><td class="cross">–</td><td class="cross">–</td></tr>
+          <tr><td>Déploiement en moins de 5 secondes</td><td class="check">✓</td><td class="cross">–</td><td class="cross">–</td><td class="cross">–</td></tr>
+          <tr><td>Hébergement inclus</td><td class="check">✓</td><td class="check">✓</td><td class="cross">–</td><td class="check">✓</td></tr>
+          <tr><td>SSL automatique</td><td class="check">✓</td><td class="check">✓</td><td class="cross">Payant</td><td class="check">✓</td></tr>
+          <tr><td>Domaine personnalisé</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
+          <tr><td>Accès au code source</td><td class="check">✓</td><td class="cross">–</td><td class="check">✓</td><td class="cross">–</td></tr>
+          <tr><td>Analytics intégrées</td><td class="check">✓</td><td class="check">✓</td><td class="cross">Plugin</td><td class="check">✓</td></tr>
+          <tr><td>Support WordPress natif</td><td class="check">✓</td><td class="cross">–</td><td class="check">✓</td><td class="cross">–</td></tr>
+          <tr><td>Collaboration d'équipe</td><td class="check">✓</td><td class="check">Payant</td><td class="check">✓</td><td class="check">Payant</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Prêt à essayer toutes ces fonctionnalités ?</h2>
+      <p>Créez votre compte gratuitement et explorez toute la puissance de Sedapps.ai.</p>
+      <div class="cta-acts">
+        <a href="/register" class="btn btn-p btn-lg">Commencer gratuitement →</a>
+        <a href="pricing.html" class="btn btn-s btn-lg">Voir les tarifs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="fg">
+      <div class="fb">
+        <a href="index.html" class="nav-logo" style="display:inline-flex"><div class="li"><img src="logo.png" alt="Sedapps"></div><span>Sedapps.ai</span></a>
+        <p>La plateforme IA pour créer des sites web professionnels sans code.</p>
+      </div>
+      <div class="fc"><h5>Produit</h5><ul><li><a href="features.html">Fonctionnalités</a></li><li><a href="how-it-works.html">Comment ça marche</a></li><li><a href="pricing.html">Tarifs</a></li></ul></div>
+      <div class="fc"><h5>Entreprise</h5><ul><li><a href="about.html">À propos</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="fc"><h5>Légal</h5><ul><li><a href="terms.html">Conditions d'utilisation</a></li><li><a href="privacy.html">Confidentialité</a></li><li><a href="cookies.html">Cookies</a></li></ul></div>
+    </div>
+    <div class="fb-bot"><p>© 2026 Sedapps.ai — Tous droits réservés</p><div class="fsoc"><a href="#">𝕏</a><a href="#">in</a><a href="#">⌥</a></div></div>
+  </div>
+</footer>
+<script src="shared.js"></script>
+</body>
+</html>
