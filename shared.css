@@ -28,7 +28,7 @@ ul{list-style:none}
 .grad{background:linear-gradient(135deg,var(--blue-l),var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
 /* NAVBAR */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 24px;transition:all .3s}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 24px;transition:all .3s;background:rgba(5,5,8,.1);backdrop-filter:blur(8px)}
 .nav.scrolled{background:rgba(5,5,8,.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .nav-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
 .nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.1rem}

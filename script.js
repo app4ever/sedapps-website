@@ -1,3 +1,22 @@
+// Mobile menu toggle
+const burger = document.getElementById('burger');
+const mob = document.getElementById('mob');
+
+if (burger && mob) {
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        mob.classList.toggle('open');
+    });
+    
+    // Close menu when clicking on a link
+    mob.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            burger.classList.remove('open');
+            mob.classList.remove('open');
+        });
+    });
+}
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -14,11 +33,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Add scroll effect to navbar
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
+    const nav = document.querySelector('.nav');
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.8)';
+        nav.classList.add('scrolled');
     } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.5)';
+        nav.classList.remove('scrolled');
     }
 });
 
